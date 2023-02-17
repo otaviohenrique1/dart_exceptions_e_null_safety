@@ -1,4 +1,26 @@
-import 'models/account.dart';
+void main(List<String> arguments) {
+  print("Started main");
+  functionOne();
+  print("Finished main");
+}
+
+void functionOne() {
+  print("Started F01");
+  functionTwo();
+  print("Finished F01");
+}
+
+void functionTwo() {
+  print("Started F02");
+  for (var i = 0; i < 5; i++) {
+    print(i);
+    // double amount = double.parse(
+    //     "Not a number"); /* Gera => FormatException: Invalid double */
+  }
+  print("Finished F02");
+}
+
+/* import 'models/account.dart';
 import 'controllers/bank_controller.dart';
 
 void main(List<String> arguments) {
@@ -19,3 +41,17 @@ void main(List<String> arguments) {
 
   print(result);
 }
+ */
+
+// void main(List<String> arguments) {
+  // double amount = double.parse("25,33");
+  /* double amount = double.parse("25,33"); => Gera Exception => FormatException (FormatException: Invalid double
+25,33) */
+  // recursiveFunc(1);
+  /* recursiveFunc(1); => Gera erro => StackOverflow */
+// }
+
+// void recursiveFunc(int count) {
+//   print(count);
+//   recursiveFunc(count + 1);
+// }
