@@ -6,7 +6,11 @@ void main(List<String> arguments) {
 
 void functionOne() {
   print("Started F01");
-  functionTwo();
+  try {
+    functionTwo();
+  } on FormatException {
+    print("A conversão não pode ser faita.");
+  }
   print("Finished F01");
 }
 
@@ -14,12 +18,14 @@ void functionTwo() {
   print("Started F02");
   for (var i = 0; i < 5; i++) {
     print(i);
-    try {
-      double amount = double.parse(
-          "Not a number"); /* Gera => FormatException: Invalid double */
-    } on FormatException {
-      print("A conversão não pode ser faita.");
-    }
+    double amount = double.parse(
+        "Not a number"); /* Gera => FormatException: Invalid double */
+    // try {
+    //   double amount = double.parse(
+    //       "Not a number"); /* Gera => FormatException: Invalid double */
+    // } on FormatException {
+    //   print("A conversão não pode ser faita.");
+    // }
   }
   print("Finished F02");
 }
