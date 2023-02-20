@@ -14,8 +14,12 @@ void functionTwo() {
   print("Started F02");
   for (var i = 0; i < 5; i++) {
     print(i);
-    // double amount = double.parse(
-    //     "Not a number"); /* Gera => FormatException: Invalid double */
+    try {
+      double amount = double.parse(
+          "Not a number"); /* Gera => FormatException: Invalid double */
+    } on FormatException {
+      print("A conversão não pode ser faita.");
+    }
   }
   print("Finished F02");
 }
