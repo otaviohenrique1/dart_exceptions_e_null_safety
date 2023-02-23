@@ -3,21 +3,39 @@ import 'models/account.dart';
 import 'controllers/bank_controller.dart';
 
 void main(List<String> arguments) {
+  // assert(2 < 1, "Levantei o Assert");
   BankController bankController = BankController();
 
-  bankController.addAccount(
-      id: "Ricarth",
-      account:
-          Account(name: "Ricarth Lima", balance: 400, isAuthenticated: true));
+  /* Account accountTest = Account(
+    name: "asdasd",
+    balance: -200,
+    isAuthenticated: true,
+  ); */
 
   bankController.addAccount(
-      id: "Kako",
-      account:
-          Account(name: "Caio Couto", balance: 600, isAuthenticated: true));
+    id: "Ricarth",
+    account: Account(
+      name: "Ricarth Lima",
+      balance: 400,
+      isAuthenticated: true,
+    ),
+  );
+
+  bankController.addAccount(
+    id: "Kako",
+    account: Account(
+      name: "Caio Couto",
+      balance: 600,
+      isAuthenticated: true,
+    ),
+  );
 
   try {
     bool result = bankController.makeTransfer(
-        idSender: "Kako", idReceiver: "Ricarth", amount: 700);
+      idSender: "Kako",
+      idReceiver: "Ricarth",
+      amount: 700,
+    );
     if (result) {
       print("Transação concluída com sucesso!");
     }
