@@ -44,3 +44,8 @@ class SenderBalanceLowerThanAmountException implements Exception {
     return "$report\nID Sender: $idSender\nSender Balance: $senderBalance\nAmount: $amount";
   }
 }
+
+/*
+  Assert => pode parar a execução normal do código se uma condição booleana for falsa.
+  Exemplo => assert(text != null);
+*/
