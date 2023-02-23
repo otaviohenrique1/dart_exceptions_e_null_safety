@@ -3,6 +3,11 @@ import 'models/account.dart';
 import 'controllers/bank_controller.dart';
 
 void main(List<String> arguments) {
+  print("asdasd".runtimeType);
+  print(null.runtimeType);
+  print(1.runtimeType);
+
+  /* runtimeType => Exibe o tipo do objeto */
   // assert(2 < 1, "Levantei o Assert");
   BankController bankController = BankController();
 
