@@ -67,6 +67,7 @@ void functionTwo() {
   print("Started F02");
   for (var i = 0; i < 5; i++) {
     print(i);
+    // ignore: unused_local_variable
     double amount = double.parse(
         "Not a number"); /* Gera => FormatException: Invalid double */
     // try {
