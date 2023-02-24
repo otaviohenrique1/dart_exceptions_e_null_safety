@@ -2,6 +2,7 @@ void main(List<String> arguments) {
   // print("asdasd".runtimeType);
   // print(null.runtimeType);
   // print(1.runtimeType);
+  /* runtimeType => Exibe o tipo do objeto */
   String naoPodeSerNula = "MyString";
   print(naoPodeSerNula.runtimeType);
   // naoPodeSerNula = null;
