@@ -1,13 +1,37 @@
+import 'dart:math';
 import 'exceptions/bank_controller_exceptions.dart';
 import 'models/account.dart';
 import 'controllers/bank_controller.dart';
 
-void main(List<String> arguments) {
-  print("asdasd".runtimeType);
-  print(null.runtimeType);
-  print(1.runtimeType);
+void testingNullSafety() {
+  Account? myAccount;
+  Random rng = Random();
+  int randomNumber = rng.nextInt(10);
+  // print(randomNumber);
+  if (randomNumber <= 5) {
+    myAccount = Account(
+      name: "Ricarth",
+      balance: 200,
+      isAuthenticated: true,
+    );
+  }
+  print(myAccount.runtimeType);
+  // print(myAccount.balance);
+  // print(myAccount!.balance);
+  if (myAccount != null) {
+    print(myAccount.balance);
+  } else {
+    print("Conta nula");
+  }
 
-  /* runtimeType => Exibe o tipo do objeto */
+  print((myAccount != null) ? myAccount.balance : "Conta nula");
+
+  print(myAccount?.balance);
+}
+
+void main(List<String> arguments) {
+  testingNullSafety();
+
   // assert(2 < 1, "Levantei o Assert");
   BankController bankController = BankController();
 
@@ -39,7 +63,7 @@ void main(List<String> arguments) {
     bool result = bankController.makeTransfer(
       idSender: "Kako",
       idReceiver: "Ricarth",
-      amount: 700,
+      amount: 500,
     );
     if (result) {
       print("Transação concluída com sucesso!");
