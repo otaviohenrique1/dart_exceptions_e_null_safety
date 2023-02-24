@@ -1,7 +1,7 @@
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 
-void main() {
+void dartExceptios() {
   // Criando o banco
   BankController bankController = BankController();
 
