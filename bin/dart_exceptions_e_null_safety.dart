@@ -4,29 +4,42 @@ import 'models/account.dart';
 import 'controllers/bank_controller.dart';
 
 void testingNullSafety() {
-  Account? myAccount;
+  Account? myAccount = Account(
+    name: "Ricarth",
+    balance: 200,
+    isAuthenticated: true,
+  );
   Random rng = Random();
   int randomNumber = rng.nextInt(10);
   // print(randomNumber);
   if (randomNumber <= 5) {
-    myAccount = Account(
-      name: "Ricarth",
-      balance: 200,
-      isAuthenticated: true,
-    );
+    myAccount.createdAt = DateTime.now();
   }
   print(myAccount.runtimeType);
-  // print(myAccount.balance);
-  // print(myAccount!.balance);
+  print(myAccount.createdAt);
+  print(myAccount.createdAt?.day);
+  print(myAccount.balance);
+
   if (myAccount != null) {
     print(myAccount.balance);
+    if (myAccount.createdAt != null) {
+      print(myAccount.createdAt!.day);
+    }
   } else {
     print("Conta nula");
   }
 
-  print((myAccount != null) ? myAccount.balance : "Conta nula");
+  // print(myAccount!.balance);
 
-  print(myAccount?.balance);
+  // if (myAccount != null) {
+  //   print(myAccount.balance);
+  // } else {
+  //   print("Conta nula");
+  // }
+
+  // print((myAccount != null) ? myAccount.balance : "Conta nula");
+
+  // print(myAccount?.balance);
 }
 
 void main(List<String> arguments) {
@@ -85,6 +98,34 @@ void main(List<String> arguments) {
     print("Algo deu errado.");
   }
 }
+
+/*
+void testingNullSafety() {
+  Account? myAccount;
+  Random rng = Random();
+  int randomNumber = rng.nextInt(10);
+  // print(randomNumber);
+  if (randomNumber <= 5) {
+    myAccount = Account(
+      name: "Ricarth",
+      balance: 200,
+      isAuthenticated: true,
+    );
+  }
+  print(myAccount.runtimeType);
+  // print(myAccount.balance);
+  // print(myAccount!.balance);
+  if (myAccount != null) {
+    print(myAccount.balance);
+  } else {
+    print("Conta nula");
+  }
+
+  print((myAccount != null) ? myAccount.balance : "Conta nula");
+
+  print(myAccount?.balance);
+}
+*/
 
 // void main(List<String> arguments) {
   // double amount = double.parse("25,33");
