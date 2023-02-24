@@ -20,6 +20,7 @@ void testingNullSafety() {
   print(myAccount.createdAt?.day);
   print(myAccount.balance);
 
+  // ignore: unnecessary_null_comparison
   if (myAccount != null) {
     print(myAccount.balance);
     if (myAccount.createdAt != null) {
